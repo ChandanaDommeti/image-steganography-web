@@ -46,3 +46,35 @@ docker build -t stegano-app .
 
 # Run container
 docker run -p 5000:5000 stegano-app
+
+☸️ Kubernetes (Optional)
+You can deploy the app on a Kubernetes cluster using the provided manifests.
+
+# Apply Deployment and Service
+kubectl apply -f k8s/deployment.yaml
+kubectl apply -f k8s/service.yaml
+
+# Check pod logs
+kubectl logs -l app=stegano-app
+
+# Access using port-forward (if no LoadBalancer)
+kubectl port-forward service/stegano-service 5000:5000
+📁 Project Structure
+
+image-steganography-web/
+├── app.py                 # Flask backend
+├── stegano_utils.py       # Steganography logic
+├── templates/             # HTML pages (Jinja2)
+├── static/                # Uploaded images
+├── Dockerfile             # Docker build config
+├── requirements.txt       # Python dependencies
+├── k8s/
+│   ├── deployment.yaml    # Kubernetes deployment
+│   └── service.yaml       # Kubernetes service
+
+
+🙌 Credits
+#Developed by Chandana Dommeti
+
+📝 License
+#This project is open-source and free to use under the MIT License.
