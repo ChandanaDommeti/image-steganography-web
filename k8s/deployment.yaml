@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stegano-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stegano
+  template:
+    metadata:
+      labels:
+        app: stegano
+    spec:
+      containers:
+      - name: stegano-container
+        image: chandanadommeti/stegano-app:latest
+        ports:
+        - containerPort: 5000
