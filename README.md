@@ -1,3 +1,4 @@
+
 # 🕵️‍♀️ Image Steganography Web App
 
 A simple yet powerful web application to **hide and reveal secret messages** in images using LSB (Least Significant Bit) based steganography.
@@ -30,7 +31,7 @@ This project was containerized with **Docker**, deployed using **Render**, and i
 
 ## 🚀 Live Demo
 
-🌐 [Click here to try it live](https://image-steganography-web.onrender.com) 
+🌐 [Click here to try it live](https://image-steganography-web.onrender.com)
 
 ---
 
@@ -46,12 +47,15 @@ docker build -t stegano-app .
 
 # Run container
 docker run -p 5000:5000 stegano-app
+````
 
 ---
 
 ## ☸️ Kubernetes (Optional)
+
 You can deploy the app on a Kubernetes cluster using the provided manifests.
 
+```bash
 # Apply Deployment and Service
 kubectl apply -f k8s/deployment.yaml
 kubectl apply -f k8s/service.yaml
@@ -61,11 +65,13 @@ kubectl logs -l app=stegano-app
 
 # Access using port-forward (if no LoadBalancer)
 kubectl port-forward service/stegano-service 5000:5000
+```
 
 ---
 
 ## 📁 Project Structure
 
+```
 image-steganography-web/
 ├── app.py                 # Flask backend
 ├── stegano_utils.py       # Steganography logic
@@ -76,13 +82,18 @@ image-steganography-web/
 ├── k8s/
 │   ├── deployment.yaml    # Kubernetes deployment
 │   └── service.yaml       # Kubernetes service
+```
 
 ---
 
 ## 🙌 Credits
-#Developed by Chandana Dommeti
+
+Developed by **Chandana Dommeti**
 
 ---
 
 ## 📝 License
-#This project is open-source and free to use under the MIT License.
+
+This project is open-source and free to use under the **MIT License**.
+
+```
